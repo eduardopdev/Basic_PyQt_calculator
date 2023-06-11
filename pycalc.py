@@ -3,6 +3,8 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget,
                              QGridLayout, QLineEdit, QPushButton,
                              QVBoxLayout)
+from pycalc_model import evaluateExpression
+from pycalc_model import ERROR_MSG
 
 WINDOW_SIZE = 235
 DISPLAY_HEIGHT = 35
