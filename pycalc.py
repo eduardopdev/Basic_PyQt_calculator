@@ -5,6 +5,7 @@ from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget,
                              QVBoxLayout)
 from pycalc_model import evaluateExpression
 from pycalc_model import ERROR_MSG
+from pycalc_controller import PyCalc
 
 WINDOW_SIZE = 235
 DISPLAY_HEIGHT = 35
@@ -67,6 +68,7 @@ def main():
     pycalcApp = QApplication([])
     pycalcWindow = PyCalcWindow()
     pycalcWindow.show()
+    PyCalc(model=evaluateExpression, view=pycalcWindow)
     sys.exit(pycalcApp.exec())
 
 if __name__ == "__main__":
