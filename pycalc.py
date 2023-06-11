@@ -32,7 +32,7 @@ class PyCalcWindow(QMainWindow):
             for col, key in enumerate(keys):
                 self.buttonMap[key] = QPushButton(key)
                 self.buttonMap[key].setFixedSize(BUTTON_SIZE, BUTTON_SIZE)
-                buttonsLayout.addWidget(self.buttonMap, row, col)
+                buttonsLayout.addWidget(self.buttonMap[key], row, col)
 
         self.generalLayout.addLayout(buttonsLayout)
 
@@ -46,6 +46,19 @@ class PyCalcWindow(QMainWindow):
         self.setCentralWidget(centralWidget)
         self._createDisplay()
         self._createButtons()
+
+    def setDisplayText(self, text):
+        """Set the display's text."""
+        self.display.setText(text)
+        self.display.setFocus()
+
+    def displayText(self):
+        """Get the display's text."""
+        return self.display.text()
+    
+    def clearDisplay(self):
+        """Clear the display"""
+        self.setDisplayText("")
 
 def main():
     """PyCalc's main function."""
